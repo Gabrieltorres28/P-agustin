@@ -45,7 +45,7 @@ const sendEmail = (e) => {
   e.preventDefault();
   // serviceID - templateID - #form - publicKey
   emailjs
-    .sendForm("serviceID", "templateID", "#contact-form", "publicKey")
+    .sendForm("service_2cud1ij", "template_jc6mhjm", "#contact-form", "YyD3pCcHT45Om4qyv")
     .then(
       () => {
         // Show sent message - emoji - win + . - 'verificación'
