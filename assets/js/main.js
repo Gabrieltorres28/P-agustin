@@ -71,3 +71,36 @@ contactForm.addEventListener("submit", sendEmail);
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: 'top',         // Desde dónde inicia la animación (e.g., 'top', 'bottom', 'left', 'right')
+  distance: '50px',      // Distancia que se desplaza el elemento en la animación
+  duration: 1000,        // Duración de la animación en milisegundos
+  delay: 300,            // Retraso antes de comenzar la animación
+  reset: true,           // Hace que la animación se repita al volver a hacer scroll
+});
+
+// Aplica la animación a cada sección usando su clase o ID
+sr.reveal('.container--home, .container--about, .container--skills, .projects, .home__subtitle, .home__title, .home__education ', { interval: 200 });
+
+
+/*=============== AUTO_ESCRITURA ===============*/
+
+const elemento = document.getElementById("textoEscritura");
+const texto = elemento.innerHTML; // Toma el texto que ya está en el HTML
+const velocidad = 44; // Ajusta la velocidad en milisegundos
+let indice = 0;
+
+// Limpia el contenido para que se vea el efecto desde el inicio
+elemento.innerHTML = "";
+
+function escribirTexto() {
+    if (indice < texto.length) {
+        elemento.innerHTML += texto.charAt(indice);
+        indice++;
+        setTimeout(escribirTexto, velocidad);
+    }
+}
+
+// Llamada a la función cuando se cargue la página
+window.onload = escribirTexto;
+
