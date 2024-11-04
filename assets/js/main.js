@@ -67,20 +67,40 @@ const sendEmail = (e) => {
 contactForm.addEventListener("submit", sendEmail);
 
 /*=============== SHOW SCROLL UP ===============*/
+const scrollup = () =>{
+    const scrollUp = documen.getElementById('scroll-up')
+    this.scrollY >=350 ? scrollUp.classList.add('show-scroll')
+            : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () =>{
+      const scrollY = window.pageYOffset
+
+      sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id'),
+              sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+          sectionClass-classList.add('active-link')
+        }else{
+          sectionClass.classList.remove('active-link')
+        }
+
+
+      })
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-  origin: 'top',         // Desde dónde inicia la animación (e.g., 'top', 'bottom', 'left', 'right')
-  distance: '50px',      // Distancia que se desplaza el elemento en la animación
-  duration: 1000,        // Duración de la animación en milisegundos
-  delay: 300,            // Retraso antes de comenzar la animación
-  reset: true,           // Hace que la animación se repita al volver a hacer scroll
-});
+
 
 // Aplica la animación a cada sección usando su clase o ID
-sr.reveal('.container--home, .container--about, .container--skills, .projects, .home__subtitle, .home__title, .home__education ', { interval: 200 });
+
 
 
 /*=============== AUTO_ESCRITURA ===============*/
