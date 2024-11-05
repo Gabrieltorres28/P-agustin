@@ -24,75 +24,82 @@
   </head>
   <body>
     <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-      <div class="container">
-        <a href="#" class="logo">Agustín<span>Torres</span></a>
-        <nav class="nav">
-          <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#home" class="nav__link active-link">Inicio</a>
-              </li>
-              <li class="nav__item">
-                <a href="#about" class="nav__link">Acerca de</a>
-              </li>
-              <li class="nav__item">
-                <a href="#services" class="nav__link">Servicios</a>
-              </li>
-              <li class="nav__item">
-                <a href="#projects" class="nav__link">Proyectos</a>
-              </li>
-              <li class="nav__item">
-                <a href="#contact" class="nav__link">Contacto</a>
-              </li>
-            </ul>
-            <!-- close button -->
-            <div class="nav__close" id="nav-close">
-              <i class="ri-close-line"></i>
-            </div>
-          </div>
-          <div class="nav__open" id="nav-open">
-            <i class="ri-menu-line"></i>
-          </div>
-        </nav>
+  <header class="header" id="header">
+    
+  <nav class="nav container">
+    <!-- Logo -->
+    <a href="#" class="nav__logo">Agustín<span>Torres</span></a>
+    
+    <!-- Navigation Menu -->
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#home" class="nav__link active-link">Inicio</a>
+        </li>
+        <li class="nav__item">
+          <a href="#about" class="nav__link">Acerca de</a>
+        </li>
+        <li class="nav__item">
+          <a href="#services" class="nav__link">Servicios</a>
+        </li>
+        <li class="nav__item">
+          <a href="#projects" class="nav__link">Proyectos</a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">Contacto</a>
+        </li>
+      </ul>
+      
+      <!-- Close Button -->
+      <div class="nav__close" id="nav-close">
+        <i class="ri-close-line"></i>
       </div>
-    </header>
+    </div>
+    
+    <!-- Toggle Button for Mobile Menu -->
+    <div class="nav__toggle" id="nav-toggle">
+      <i class="ri-menu-line"></i>
+    </div>
+  </nav>
+</header>
 
     <!--==================== MAIN ====================-->
     <main class="main">
       <!--==================== HOME ====================-->
-      <section class="home" id="HOME">
-        <div class="container container--home">
+      <section class="home section" id="Home">
+        <div class="home__container container grid">
           <div class="home__content">
             <div class="home__data">
               <h3 class="home__subtitle" >Hola, <span>Soy</span></h3>
               <h1 class="home__title" >Agustín Torres</h1>
               <h3 class="home__education">Front-end Developer</h3>
-              <p class="home__description" id="textoEscritura" >
+              <p class="home__description"  >
                 Con conocimientos en desarrollo y diseño web, ofrezco los
                 mejores proyectos, logrando un trabajo de calidad.
               </p>
-              <a href="#contact" class="button">Hablemos </a>
+              <a href="#contact" class="button btn__home btn__home--left">Contáctame</a>
+              <a href="#contact" class="button btn__home">Contáctame</a>
+
             </div>
             <div class="home__social">
               <a
                 href="https://github.com/"
                 target="_blank"
-                class="social__link"
+                class="home__social-link"
               >
                 <i class="ri-github-fill"></i>
               </a>
               <a
-                href="https://instagram.com/"
+                href="https://www.instagram.com/torresgabriel11/"
                 target="_blank"
-                class="social__link"
+                class="home__social-link"
               >
                 <i class="ri-instagram-line"></i>
               </a>
               <a
                 href="https://www.linkedin.com/"
                 target="_blank"
-                class="social__link"
+                class="home__social-link"
               >
                 <i class="ri-linkedin-box-line"></i>
               </a>
@@ -157,7 +164,7 @@
                   class="home__img"
                   id="imageBlob"
                   width="640"
-                  height="940"
+                  height="925"
                   href="./assets/img/portfolio_foto.png"
                 />
               </defs>
@@ -167,8 +174,8 @@
       </section>
 
       <!--==================== ABOUT ====================-->
-      <section class="about" id="about">
-        <div class="container container--about">
+      <section class="about container" id="about">
+        <div class="about__container container grid">
           <div class="about__data">
             <h3 class="section__subtitle">My <span>Intro</span></h3>
             <h2 class="section__title">About Me</h2>
@@ -255,7 +262,7 @@
 
       <!--==================== SKILLS ====================-->
       <section class="skills">
-        <div class="container container--skills">
+        <div class="skills__container container grid">
           <div class="skills__data">
             <h3 class="section__subtitle"> Favoritas <span>Habilidades</span></h3>
             <h2 class="section__title">Mis habilidades</h2>
@@ -284,7 +291,7 @@
       <section class="services" id="services">
         <h3 class="section__subtitle">My <span>Services</span></h3>
         <h2 class="section__title">What I Do</h2>
-        <div class="container container--services">
+        <div class="services__container container grid">
           <article class="services__card">
             <i class="ri-layout-3-line services__icon"></i>
             <h2 class="services__title">Web Developer</h2>
@@ -312,10 +319,10 @@
       </section>
 
       <!--==================== PROJECTS ====================-->
-      <section class="projects" id="projects">
+      <section class="projects section" id="projects">
         <h3 class="section__subtitle">Mis <span>Trabajos</span></h3>
         <h2 class="section__title">Proyectos recientes</h2>
-        <div class="container container--projects">
+        <div class="projects__container container grid">
           <article class="projects__card">
             <img
               src="./assets/img/project-img-1.jpg"
@@ -379,7 +386,7 @@
       <section class="contact" id="contact">
         <h3 class="section__subtitle">Pongámonos en <span>Contacto</span></h3>
         <h2 class="section__title">Contáctame</h2>
-        <div class="container container--contact">
+        <div class="contact__container container grid">
           <form action="" class="contact__form" id="contact-form">
             <div class="contact__group">
               <input
@@ -414,7 +421,7 @@
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
-      <div class="container container--footer">
+      <div class="footer__container container grid">
         <div>
           <h1 class="footer__title">Agustín <span>Torres</span></h1>
           <h2 class="footer__education">Desarrollador</h2>
@@ -423,18 +430,18 @@
           <a
             href="https://www.facebook.com/"
             target="_blank"
-            class="social__link"
+            class="home__social-link"
           >
             <i class="ri-facebook-circle-line"></i>
           </a>
           <a
             href="https://www.instagram.com/"
             target="_blank"
-            class="social__link"
+            class="home__social-link"
           >
             <i class="ri-instagram-line"></i>
           </a>
-          <a href="https://twitter.com/" target="_blank" class="social__link">
+          <a href="https://twitter.com/" target="_blank" class="home__social-link">
             <i class="ri-twitter-line"></i>
           </a>
         </div>
@@ -450,7 +457,7 @@
     </a>
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src=></script>
 
     <!--=============== EMAIL JS ===============-->
     <script

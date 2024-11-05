@@ -125,13 +125,13 @@ svg {
   max-width: 1120px;
   margin-inline: auto;
 }
-.container--home,
-.container--about,
-.container--skills,
-.container--services,
-.container--projects,
-.container--contact,
-.container--footer {
+.home__container,
+.about__container,
+.skills__container,
+.services__container,
+.projects__container,
+.contac__container,
+.footer__container {
   flex-direction: column;
   row-gap: 3rem;
 }
@@ -171,39 +171,51 @@ header {
 }
 
 .nav {
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
+.nav__logo {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
-.logo span {
+.nav__logo span {
   color: var(--first-color);
 }
 
 .nav__close,
-.nav__open {
+.nav__toggle {
   display: flex;
   font-size: 1.25rem;
   color: var(--title-color);
   cursor: pointer;
 }
 
-.nav__menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  background-color: hsla(0, 0%, 10%, 0.3);
-  width: 75%;
-  height: 100%;
-  padding: 4.5rem 0 0 3rem;
-  backdrop-filter: blur(24px);
-  transition: right 0.4s;
+.nav__close {
+  position: absolute;
+  top: 1rem; 
+  right: 1.5rem;
+   
 }
 
+@media screen and (max-width:1023px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 10%, .3);
+    width: 75%;
+    height: 100%;
+    padding: 4.5rem 0 0 3rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px) ;
+    transition: right 0.4s;
+  }
+  
+  
+}
 .nav__list {
   display: flex;
   flex-direction: column;
@@ -213,17 +225,12 @@ header {
 .nav__link {
   color: var(--title-color);
   font-weight: var(--font-medium);
-  transition: color 0.4s;
+  transition: color .4s;
 }
 .nav__link:hover {
   color: var(--first-color);
 }
 
-.nav__close {
-  position: absolute;
-  top: 1em;
-  right: 7%;
-}
 
 /* Show menu */
 .show-menu {
@@ -243,6 +250,7 @@ header {
   height: 100%;
   background-color: hsla(0, 0%, 10%, 0.3);
   backdrop-filter: blur(24px);
+ 
 }
 
 /* Active link */
@@ -255,10 +263,16 @@ header {
   padding-block: 5rem 3rem;
   background-color: var(--container-color);
 }
-
+.home__container {
+  padding-top: 2rem;
+  row-gap:2.5rem;
+  
+  
+}
 .home__content {
   display: grid;
   row-gap: 2rem;
+  
 }
 .home__data {
   text-align: center;
@@ -283,7 +297,7 @@ header {
   justify-content: center;
   column-gap: 1.25rem;
 }
-.social__link {
+.home__social-link {
   display: flex;
   background-color: var(--first-color-alt);
   padding: 0.5rem;
@@ -292,12 +306,13 @@ header {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: transform 0.4s;
 }
-.social__link:hover {
+.home__social-link:hover {
   transform: translateY(-0.25rem);
 }
 
-.home__image {
+.home__img {
   justify-self: center;
+  
 }
 .home__blob {
   width: 320px;
@@ -323,6 +338,11 @@ header {
 .about {
   padding-block: 5rem 3rem;
 }
+.about__container {
+  row-gap: 2.5rem;
+
+  
+}
 .about__data {
   text-align: center;
 }
@@ -341,8 +361,14 @@ header {
 
 /*=============== SKILLS ===============*/
 .skills {
-  padding-block: 5rem 3rem;
+  padding-block: 3.5rem;
+  
   background-color: var(--container-color);
+}
+.skills__container{
+  padding-bottom: 2rem;
+  row-gap: 3.5rem;
+
 }
 
 .skills__data {
@@ -376,8 +402,9 @@ header {
 .services {
   padding-block: 5rem 3rem;
 }
-.container--services {
+.services__container {
   row-gap: 2rem;
+  padding-block: 1rem;
 }
 .services__card {
   text-align: center;
@@ -404,7 +431,14 @@ header {
 /*=============== PROJECTS ===============*/
 .projects {
   padding-block: 5rem 3rem;
+ 
   background-color: var(--container-color);
+}
+
+.projects__container{
+  row-gap: 2rem;
+  justify-content: center;
+  padding-block: 1rem;
 }
 .projects__card {
   position: relative;
@@ -426,8 +460,10 @@ header {
     180deg,
     hsla(0, 0%, 0%, 0) 0%,
     hsla(var(--hue), 70%, 40%, 0.8) 120%
+
+  
   );
-  backdrop-filter: blur(4px);
+
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -462,8 +498,12 @@ header {
 }
 
 /*=============== CONTACT ===============*/
-.contact {
+.contact{
   padding-block: 5rem 3rem;
+}
+
+.contact__container{
+  padding-top: 1rem;
 }
 .contact__form,
 .contact__group {
@@ -504,7 +544,7 @@ header {
   background-color: var(--container-color);
   padding-block: 3.5rem 2rem;
 }
-.container--footer {
+.footer__container{
   row-gap: 2rem;
   text-align: center;
 }
@@ -551,7 +591,7 @@ header {
 .scrollup{
   position: fixed;
   right: 1rem;
-  bottom: 50%;
+  bottom: -50%;
   background-color: var(--body-color);
   padding: 6px;
   display: inline-flex;
@@ -589,46 +629,61 @@ header {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-  .container--home, 
-  .container--about, 
-  .container--skills, 
-  .container--services, 
-  .container--projects, 
-  .container--contact{
+  .home__container, 
+  .about__container, 
+  .skills__container, 
+  .services__container, 
+  .projects__container, 
+  .contact__container {
     grid-template-columns: 360px;
     justify-content: center;
   }
-  
 }
 
 @media screen and (min-width: 768px) {
-  .nav__menu{
+  .nav__menu {
     width: 55%;
-    
   }
-  .container--home, 
-  .container--about,
-  .container--skills{
-    grid-template-columns: repeat(2, 12px);
+
+.home__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 1rem;
     align-items: center;
   }
+  .about__container {
+    display: flex;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 1rem; /* Espacio entre las columnas */
+    align-items: center; /* Alinea verticalmente el contenido */
+  }
+ 
+  
   .home__data,
-  .skills__data
-  .about__data:is(.about__data, .skills__data):is(.section__subtitle, .section__title){
+  .skills__data,
+  .about__data:is(.about__data, .skills__data):is(.section__subtitle, .section__title) {
     text-align: initial;
   }
-  .home__social{
+
+  .home__social {
     justify-content: initial;
   }
-  .home__blob, .home__blob{
+
+  .home__blob {
     width: 400px;
   }
 
-  .about__data{
+
+
+  .about__data {
     order: 1;
   }
 
-  
+  .services__container,
+  .projects__container {
+    grid-template-columns: repeat(2, 352px);
+  }
 }
 
 /* For large devices */
+

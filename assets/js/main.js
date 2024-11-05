@@ -1,11 +1,11 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),
-  navOpen = document.getElementById("nav-open"),
+  navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close");
 
 /* Menu show */
-if (navOpen) {
-  navOpen.addEventListener("click", () => {
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu");
   });
 }
@@ -67,34 +67,38 @@ const sendEmail = (e) => {
 contactForm.addEventListener("submit", sendEmail);
 
 /*=============== SHOW SCROLL UP ===============*/
-const scrollup = () =>{
-    const scrollUp = documen.getElementById('scroll-up')
-    this.scrollY >=350 ? scrollUp.classList.add('show-scroll')
-            : scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
+// Mostrar el botón de scroll-up cuando se hace scroll
+const scrollUp = () => {
+  const scrollUpButton = document.getElementById('scroll-up');
+  if (window.scrollY >= 350) {
+      scrollUpButton.classList.add('show-scroll');
+  } else {
+      scrollUpButton.classList.remove('show-scroll');
+  }
+};
+window.addEventListener('scroll', scrollUp);
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
+// Scroll para activar el enlace de sección en el menú
+const sections = document.querySelectorAll('section[id]');
 
-const scrollActive = () =>{
-      const scrollY = window.pageYOffset
+const scrollActive = () => {
+  const scrollY = window.pageYOffset;
 
-      sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id'),
-              sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-          sectionClass-classList.add('active-link')
-        }else{
-          sectionClass.classList.remove('active-link')
-        }
+  sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 58;
+      const sectionId = current.getAttribute('id');
+      const sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
 
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          sectionClass.classList.add('active-link');
+      } else {
+          sectionClass.classList.remove('active-link');
+      }
+  });
+};
+window.addEventListener('scroll', scrollActive);
 
-      })
-}
-window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
@@ -103,24 +107,4 @@ window.addEventListener('scroll', scrollActive)
 
 
 
-/*=============== AUTO_ESCRITURA ===============*/
-
-const elemento = document.getElementById("textoEscritura");
-const texto = elemento.innerHTML; // Toma el texto que ya está en el HTML
-const velocidad = 44; // Ajusta la velocidad en milisegundos
-let indice = 0;
-
-// Limpia el contenido para que se vea el efecto desde el inicio
-elemento.innerHTML = "";
-
-function escribirTexto() {
-    if (indice < texto.length) {
-        elemento.innerHTML += texto.charAt(indice);
-        indice++;
-        setTimeout(escribirTexto, velocidad);
-    }
-}
-
-// Llamada a la función cuando se cargue la página
-window.onload = escribirTexto;
 
