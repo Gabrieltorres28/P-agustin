@@ -37,13 +37,16 @@
           <a href="#home" class="nav__link active-link">Inicio</a>
         </li>
         <li class="nav__item">
-          <a href="#about" class="nav__link">Acerca de</a>
+          <a href="#skills" class="nav__link">Habilidades</a>
         </li>
         <li class="nav__item">
           <a href="#services" class="nav__link">Servicios</a>
         </li>
         <li class="nav__item">
           <a href="#projects" class="nav__link">Proyectos</a>
+        </li>
+        <li class="nav__item">
+          <a href="#about" class="nav__link">Acerca de</a>
         </li>
         <li class="nav__item">
           <a href="#contact" class="nav__link">Contacto</a>
@@ -66,24 +69,23 @@
     <!--==================== MAIN ====================-->
     <main class="main">
       <!--==================== HOME ====================-->
-      <section class="home section" id="Home">
+      <section class="home section" id="home">
         <div class="home__container container grid">
           <div class="home__content">
             <div class="home__data">
               <h3 class="home__subtitle" >Hola, <span>Soy</span></h3>
               <h1 class="home__title" >Agustín Torres</h1>
-              <h3 class="home__education">Front-end Developer</h3>
+              <h3 class="home__education">Desarrollador</h3>
               <p class="home__description"  >
-                Con conocimientos en desarrollo y diseño web, ofrezco los
-                mejores proyectos, logrando un trabajo de calidad.
+                Con conocimientos en desarrollo de aplicaciones web y sistemas personalizados. Ofrezco proyectos de alta calidad, enfocados en lograr los mejores resultados.
               </p>
-              <a href="#contact" class="button btn__home btn__home--left">Contáctame</a>
-              <a href="#contact" class="button btn__home">Contáctame</a>
+              <a href="#contact" class="button btn__home btn__home--left">Contáctame <i class="ri-mail-line ri-xl btn--icon"></i></a>
+              <a href="#contact" class="button btn__home">Descargar CV  <i class="ri-download-2-line ri-xl btn--icon"></i></i></a>
 
             </div>
             <div class="home__social">
               <a
-                href="https://github.com/"
+                href="https://github.com/Gabrieltorres28"
                 target="_blank"
                 class="home__social-link"
               >
@@ -165,7 +167,7 @@
                   id="imageBlob"
                   width="640"
                   height="925"
-                  href="./assets/img/portfolio_foto.png"
+                  href="./assets/img/PortfolioFotoOriginal.png"
                 />
               </defs>
             </svg>
@@ -173,20 +175,138 @@
         </div>
       </section>
 
+      
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills" id="skills">
+        <div class="skills__container container grid">
+          <div class="skills__data">
+            <h3 class="section__subtitle"> Favoritas <span>Habilidades</span></h3>
+            <h2 class="section__title">Mis habilidades</h2>
+            <p class="skills__description">
+              Descubre todo el conjunto de habilidades y conocimientos que poseo, para desarrollar tus proyectos.
+            </p>
+            <a href="#projects" class="button">Ver Proyectos</a>
+          </div>
+          <div class="skills__content">
+            <ol class="skills__group">
+              <li class="skills__item">HTML & CSS</li>
+              <li class="skills__item">JavaScript</li>
+              <li class="skills__item">Python</li>
+              
+            </ol>
+            <ol class="skills__group" start="5">
+              <li class="skills__item">Git & GitHub</li>
+              <li class="skills__item">C# WPF .NET</li>
+              <li class="skills__item">SQL Server & MySQL</li>
+             
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SERVICES ====================-->
+      <section class="services" id="services">
+        <h3 class="section__subtitle">Mis <span>Servicios</span></h3>
+        <h2 class="section__title">Lo que hago</h2>
+        <div class="services__container container grid">
+          <article class="services__card">
+            <i class="ri-layout-3-line services__icon"></i>
+            <h2 class="services__title">Desarrollador</h2>
+            <p class="services__description">
+              Desarrollo de páginas web y sistemas personalizados, utilizando tecnologías y librerías actuales del ámbito laboral para ofrecer soluciones funcionales y adaptadas a cada necesidad.
+            </p>
+          </article>
+          <article class="services__card">
+            <i class="ri-database-2-line services__icon"></i>
+            <h2 class="services__title">Base De Datos</h2>
+            <p class="services__description">
+              Creación y gestión de bases de datos personalizadas, implementando soluciones eficientes para almacenar, organizar y acceder a la información de manera segura y escalable, adaptadas a las necesidades específicas de cada proyecto.
+          </article>
+          <article class="services__card">
+            <i class="ri-pen-nib-line services__icon"></i>
+            <h2 class="services__title">Soluciones Digitales</h2>
+            <p class="services__description">
+              Servicios enfocados en soluciones digitales personalizadas, desde desarrollo web hasta optimización de interfaces, utilizando tecnologías modernas para mejorar la experiencia del usuario y cumplir con las necesidades de cada proyecto
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!--==================== PROJECTS ====================-->
+      <section class="projects section" id="projects">
+        <h3 class="section__subtitle">Mis <span>Logros</span></h3>
+        <h2 class="section__title">Proyectos recientes</h2>
+        <div class="projects__container container grid">
+          <article class="projects__card">
+            <img
+              src="./assets/img/proyecto1.jpeg"
+              alt="projects image"
+              class="projects__img"
+            />
+            <div class="projects__modal">
+              <span class="projects__subtitle">Web</span>
+              <h2 class="projects__title">Sitio web moderno</h2>
+              <a href="" class="projects__button">
+                Ver demo <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </article>
+          <article class="projects__card">
+            <img
+              src="./assets/img/proyecto2.jpeg"
+              alt="projects image"
+              class="projects__img"
+            />
+            <div class="projects__modal">
+              <span class="projects__subtitle">Web</span>
+              <h2 class="projects__title">Sitio web moderno</h2>
+              <a href="" class="projects__button">
+                Ver demo <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </article>
+          <article class="projects__card">
+            <img
+              src="./assets/img/workit.jpeg"
+              alt="projects image"
+              class="projects__img"
+            />
+            <div class="projects__modal">
+              <span class="projects__subtitle">Web</span>
+              <h2 class="projects__title">Sitio web moderno</h2>
+              <a href="" class="projects__button">
+                Ver demo <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </article>
+          <article class="projects__card">
+            <img
+              src="./assets/img/WPFNET.png"
+              alt="projects image"
+              class="projects__img"
+            />
+            <div class="projects__modal">
+              <span class="projects__subtitle">Web</span>
+              <h2 class="projects__title">Sitio web moderno</h2>
+              <a href="" class="projects__button">
+                Ver demo <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!--==================== ABOUT ====================-->
       <section class="about container" id="about">
         <div class="about__container container grid">
           <div class="about__data">
-            <h3 class="section__subtitle">My <span>Intro</span></h3>
-            <h2 class="section__title">About Me</h2>
+            <h3 class="section__subtitle">Mi <span>Presentación</span></h3>
+            <h2 class="section__title">Acerca de mi</h2>
             <p class="about__description">
-              Desarrollador frontend en formación, enfocado en crear páginas web
-              con interfaces UI/UX que mejoren la experiencia del usuario. A
-              medida que avanzo en mis estudios, he trabajado en proyectos que
-              han dejado satisfechos a quienes los han probado, y sigo ampliando
-              mis conocimientos para ofrecer mejores soluciones.
+              Soy un desarrollador en formación, enfocado en crear soluciones eficientes y funcionales en el desarrollo de aplicaciones web y sistemas. Avanzo en mis estudios de análisis de sistemas, lo que me permite aplicar herramientas y metodologías en cada proyecto. He trabajado en proyectos que han cumplido las expectativas de los usuarios y busco constantemente nuevos desafíos para crecer y aportar al éxito de un equipo de trabajo.
             </p>
-            <a href="#contact" class="button">Contact Me</a>
+           
           </div>
           <div class="about__image">
             <svg
@@ -252,7 +372,7 @@
                   id="imageBorder"
                   width="640"
                   height="940"
-                  href="./assets/img/portfolio_foto.png"
+                  href="./assets/img/PortfolioFotoOriginal.png"
                 />
               </defs>
             </svg>
@@ -260,131 +380,9 @@
         </div>
       </section>
 
-      <!--==================== SKILLS ====================-->
-      <section class="skills">
-        <div class="skills__container container grid">
-          <div class="skills__data">
-            <h3 class="section__subtitle"> Favoritas <span>Habilidades</span></h3>
-            <h2 class="section__title">Mis habilidades</h2>
-            <p class="skills__description">
-              Descubre todo el conjunto de habilidades y conocimientos que poseo, para desarrollar tus proyectos.
-            </p>
-            <a href="#projects" class="button">Ver Proyectos</a>
-          </div>
-          <div class="skills__content">
-            <ol class="skills__group">
-              <li class="skills__item">HTML & CSS</li>
-              <li class="skills__item">JavaScript</li>
-              <li class="skills__item">Bootstrap</li>
-              <li class="skills__item">React</li>
-            </ol>
-            <ol class="skills__group" start="5">
-              <li class="skills__item">Git & GitHub</li>
-              <li class="skills__item">Figma</li>
-              <li class="skills__item">Sketch</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <!--==================== SERVICES ====================-->
-      <section class="services" id="services">
-        <h3 class="section__subtitle">My <span>Services</span></h3>
-        <h2 class="section__title">What I Do</h2>
-        <div class="services__container container grid">
-          <article class="services__card">
-            <i class="ri-layout-3-line services__icon"></i>
-            <h2 class="services__title">Web Developer</h2>
-            <p class="services__description">
-              Development of custom web pages. Using current technologies and
-              libraries of the labor field.
-            </p>
-          </article>
-          <article class="services__card">
-            <i class="ri-pantone-line services__icon"></i>
-            <h2 class="services__title">UI/UX Designer</h2>
-            <p class="services__description">
-              I offer design of web interfaces and mobile applications, design
-              made in figma, adobe xd and sketch.
-            </p>
-          </article>
-          <article class="services__card">
-            <i class="ri-pen-nib-line services__icon"></i>
-            <h2 class="services__title">Graphic Design</h2>
-            <p class="services__description">
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, necessitatibus sapiente excepturi saepe velit illo ad explicabo maxime labore.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!--==================== PROJECTS ====================-->
-      <section class="projects section" id="projects">
-        <h3 class="section__subtitle">Mis <span>Trabajos</span></h3>
-        <h2 class="section__title">Proyectos recientes</h2>
-        <div class="projects__container container grid">
-          <article class="projects__card">
-            <img
-              src="./assets/img/project-img-1.jpg"
-              alt="projects image"
-              class="projects__img"
-            />
-            <div class="projects__modal">
-              <span class="projects__subtitle">Web</span>
-              <h2 class="projects__title">Modern website</h2>
-              <a href="" class="projects__button">
-                View demo <i class="ri-external-link-line"></i>
-              </a>
-            </div>
-          </article>
-          <article class="projects__card">
-            <img
-              src="./assets/img/project-img-2.jpg"
-              alt="projects image"
-              class="projects__img"
-            />
-            <div class="projects__modal">
-              <span class="projects__subtitle">Web</span>
-              <h2 class="projects__title">Modern website</h2>
-              <a href="" class="projects__button">
-                View demo <i class="ri-external-link-line"></i>
-              </a>
-            </div>
-          </article>
-          <article class="projects__card">
-            <img
-              src="./assets/img/project-img-3.jpg"
-              alt="projects image"
-              class="projects__img"
-            />
-            <div class="projects__modal">
-              <span class="projects__subtitle">Web</span>
-              <h2 class="projects__title">Modern website</h2>
-              <a href="" class="projects__button">
-                View demo <i class="ri-external-link-line"></i>
-              </a>
-            </div>
-          </article>
-          <article class="projects__card">
-            <img
-              src="./assets/img/project-img-4.jpg"
-              alt="projects image"
-              class="projects__img"
-            />
-            <div class="projects__modal">
-              <span class="projects__subtitle">Web</span>
-              <h2 class="projects__title">Modern website</h2>
-              <a href="" class="projects__button">
-                View demo <i class="ri-external-link-line"></i>
-              </a>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <!--==================== CONTACT ====================-->
       <section class="contact" id="contact">
-        <h3 class="section__subtitle">Pongámonos en <span>Contacto</span></h3>
+        <h3 class="section__subtitle">Envíame un <span>Email</span></h3>
         <h2 class="section__title">Contáctame</h2>
         <div class="contact__container container grid">
           <form action="" class="contact__form" id="contact-form">
@@ -393,26 +391,32 @@
                 type="text"
                 name="user_name"
                 required
-                placeholder="Enter your name"
+                placeholder="Ingresa tu nombre"
                 class="contact__input"
+                onfocus="removePlaceholder(this)"
+                onblur="restorePlaceholder(this, 'Ingresa tu nombre')"
               />
               <input
                 type="email"
                 name="user_email"
                 required
-                placeholder="Enter your email"
+                placeholder="Por favor, ingresa tu Email"
                 class="contact__input"
+                onfocus="removePlaceholder(this)"
+                onblur="restorePlaceholder(this, 'Por favor, ingresa tu Email')"
               />
             </div>
             <textarea
               name="user_message"
               required
-              placeholder="Enter your message"
+              placeholder="Ingresa tu mensaje"
               class="contact__input"
+              onfocus="removePlaceholder(this)"
+              onblur="restorePlaceholder(this, 'Ingresa tu mensaje')"
             ></textarea>
             <p class="contact__message" id="contact-message"></p>
             <button type="submit" class="button contact__button">
-              Send Message
+              Enviar mensaje 
             </button>
           </form>
         </div>
@@ -457,7 +461,7 @@
     </a>
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src=></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--=============== EMAIL JS ===============-->
     <script

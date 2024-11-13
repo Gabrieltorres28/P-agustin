@@ -99,8 +99,38 @@ const scrollActive = () => {
 };
 window.addEventListener('scroll', scrollActive);
 
+function removePlaceholder(element) {
+  element.placeholder = '';
+}
+
+function restorePlaceholder(element, text) {
+  if (element.value === '') {
+    element.placeholder = text;
+  }
+}
+
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+// Configuración general de ScrollReveal
+const sr = ScrollReveal({
+  origin: 'top',       // El origen del movimiento (puedes cambiar 'top' por 'left', 'right', 'bottom' según quieras que se desplace)
+  distance: '60px',     // La distancia del movimiento
+  duration: 2500,       // Duración de la animación en milisegundos
+  delay: 400,          // Retraso antes de que empiece la animación
+  reset: true,         // Si quieres que la animación se repita cuando el elemento vuelva a la vista
+});
+
+// Animación para la sección home
+sr.reveal(`.home__data, .home__social,  .contact__container, .footer__container`)
+sr.reveal(`.home__image`, {origin: 'bottom'})
+sr.reveal(`.about__data, .skills__data`, {origin:'left'})
+sr.reveal(`.about__image, .skills__content`, {origin:'right'})
+sr.reveal(`.services__card, .projects__card`, {interval:100})
+       // No repetir la animación al hacer scroll hacia atrás
+
+
+
+
 
 
 // Aplica la animación a cada sección usando su clase o ID
