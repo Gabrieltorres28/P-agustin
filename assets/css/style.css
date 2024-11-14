@@ -11,20 +11,22 @@
       Orange: hsl(14, 100%, 65%) - Blue: hsl(210, 100%, 70%)
       Pink: hsl(356, 100%, 75%) - Purple: hsl(250, 100%, 75%)
 
+    CVcool: hsl(36 , 100% , 50%)
+
       For more colors visit: https://colors.dopely.top/color-pedia
       -> Choose any color 
       -> click on tab (Color Conversion)
       -> Copy the color mode (HSL)
   */
 
-  --hue: 162;
-  --first-color: hsl(var(--hue), 100%, 40%);
+  --hue: 36;
+  --first-color: hsl(var(--hue), 100%, 50%);
   --first-color-alt: hsl(var(--hue), 56%, 35%);
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 65%);
-  --body-color: hsl(228, 15%, 20%);
+  --body-color: hsl(228, 15%, 20%);     
   --container-color: hsl(228, 15%, 15%);
-  --alternate-color: hsl(228, 15%, 18%);
+  
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -82,7 +84,9 @@ body {
 }
 
 body {
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
+  background: var(--body-color);
+
   color: var(--text-color);
 }
 
@@ -702,6 +706,7 @@ header {
   .skills__container,
   .services__container,
   .projects__container,
+  .about__container,
   .contact__container {
    
      max-width: 100%;
@@ -710,6 +715,7 @@ header {
 
   .home__container,
   .skills__container,
+  .about__container,
   .contact__containers
    {
     display: grid;
@@ -754,6 +760,10 @@ header {
   .nav__toggle {
     display: none;
   }
+  .nav__link{
+    font-size: 1rem;
+    font-weight: var(--normal-font-size);
+  }
 
   .nav__list {
     flex-direction: row;
@@ -767,15 +777,17 @@ header {
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
   }
+ 
 }
 
 @media screen and (min-width: 1152px){
   .container{
     margin-inline: auto;
   }
+  
   .home__container{
-    grid-template-columns: 455px 550px;
-    column-gap: 7rem;
+    grid-template-columns: 475px 550px;
+    column-gap: 5rem;
     padding-block: 2rem 3rem;
 
   }
@@ -841,12 +853,20 @@ header {
 
   .services__card{
     padding: 3.5rem 2rem;
+   
   }
   .services__icon{
     height: auto;
   }
+  .services__container
+   {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en servicios y proyectos */
+    gap: 1.5rem;
+  }
 
   .projects__container{
+    
     grid-template-columns: repeat(3, 350px);
     row-gap: 3rem;
     padding: 2.5rem 4rem;
@@ -856,12 +876,14 @@ header {
     font-size: var(--normal-font-size);
   }
 
-  .contact__container{
-    grid-template-columns: 680px;
-    padding-block: 2.5rem 2rem;
-
+  .contact__containers
+   {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para organizar mejor el contenido */
+    gap: 2rem;
+    align-items: center;
+  
   }
-
   .contact__form{
     row-gap: 1.5rem;
   }
@@ -885,5 +907,18 @@ header {
   .scrollup{
     right: 3rem;
   }
+
+  .footer__container 
+  {
+    max-width: 1120px;
+    flex-direction: row;
+    align-items: center;
+
+  }
+  .footer__copyright {
+    margin: 0;
+  }
+
+
 }
 
