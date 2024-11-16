@@ -115,8 +115,8 @@ function restorePlaceholder(element, text) {
 const sr = ScrollReveal({
   origin: 'top',       // El origen del movimiento (puedes cambiar 'top' por 'left', 'right', 'bottom' según quieras que se desplace)
   distance: '60px',     // La distancia del movimiento
-  duration: 2500,       // Duración de la animación en milisegundos
-  delay: 400,          // Retraso antes de que empiece la animación
+  duration: 2900,       // Duración de la animación en milisegundos
+  delay: 250,          // Retraso antes de que empiece la animación
   reset: true,         // Si quieres que la animación se repita cuando el elemento vuelva a la vista
 });
 

@@ -458,10 +458,14 @@ header {
 /*=============== SERVICES ===============*/
 .services {
   padding-block: 6rem 2rem;
+  
 }
 .services__container {
   row-gap: 2rem;
   padding-block: 1rem;
+ 
+  
+  
 }
 .services__card {
   text-align: center;
