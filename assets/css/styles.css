@@ -615,7 +615,7 @@ header {
 }
 /*=============== FOOTER ===============*/
 .footer {
-  background-color: var(--container-color);
+  
   padding-block: 3.5rem 2rem;
 }
 .footer__container{
