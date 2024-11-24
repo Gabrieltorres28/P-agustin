@@ -494,6 +494,20 @@ header {
   margin-top: 5px;
 
 }
+
+.ri-computer-line{
+  color: var(--first-color); 
+  font-size: 4rem;
+  margin-top: 5px;
+  margin-block: 1.5rem;
+
+}
+
+.ri-radar-line{
+  color: var(--first-color); 
+  font-size: 4rem;
+  margin-top: 5px;
+}
 .services__title {
   font-size: var(--h2-font-size);
   margin-bottom: 1.5rem;
