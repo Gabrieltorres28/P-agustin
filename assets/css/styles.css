@@ -124,6 +124,50 @@ svg {
  
 }
 
+/*=============== HERO SECTION ===============*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Toma toda la altura de la ventana */
+  background: url('ruta-de-la-imagen.jpg') no-repeat center center/cover; /* Fondo dinámico */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__content {
+  position: relative;
+  color: #fff;
+  z-index: 2;
+}
+
+.hero__content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+.hero__content p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Fondo oscuro superpuesto */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
+  z-index: 1;
+}
+
+
 
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -172,6 +216,8 @@ svg {
 .main {
   overflow: hidden; /* For animation ScrollReveal */
 }
+
+
 
 /*=============== HEADER & NAV ===============*/
 header {
@@ -316,6 +362,48 @@ header {
 .home__data {
   text-align: center;
 }
+/* Fondo del preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a; /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Siempre encima del resto */
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Spinner animado */
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 0.5rem solid #ffffff; /* Borde blanco */
+  border-top: 0.5rem solid #ffd700; /* Parte superior en oro brillante */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animación de giro */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ocultar el preloader */
+.hidden {
+  opacity: 0; /* Se desvanece */
+  pointer-events: none; /* Desactiva clics */
+}
+
 .home__subtitle,
 .home__education {
   font-size: var(--bigger-font-size);
@@ -459,59 +547,132 @@ header {
   color: var(--first-color);
 }
 /*=============== SERVICES ===============*/
+/* Estilo base de la sección de servicios */
+/* Estilo base de la sección de servicios */
 .services {
   padding-block: 6rem 2rem;
   background-color: var(--alter-container--color);
-  
 }
+
+/* Contenedor de las tarjetas */
 .services__container {
   row-gap: 2rem;
   padding-block: 1rem;
- 
-  
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
 }
+
+/* Tarjeta de servicio */
 .services__card {
-  text-align: center;
-  background-color: var(--container-color);
-  padding: 3rem 1.25rem;
+  position: relative;
+  width: 22rem; /* Ajustado para computadoras */
+  height: 22rem; /* Mantiene el tamaño cuadrado */
+  perspective: 1500px; /* Permite el efecto 3D */
   border-radius: 1rem;
-  border: 2px solid var(--container-color);
-  transition: border 0.4s;
-}
-.services__card:hover {
-  border: 2px solid var(--first-color);
-}
-.services__icon {
-  display: block;
-  font-size: 4rem;
-  color: var(--first-color);
-  margin-bottom: 0.75rem;
-}
-.ri-database-2-line {
-  color: var(--first-color); 
-  font-size: 4rem;
-  margin-top: 5px;
-
+ 
+   
 }
 
-.ri-computer-line{
-  color: var(--first-color); 
-  font-size: 4rem;
-  margin-top: 5px;
-  margin-block: 1.5rem;
-
+/* Contenedor interno de la tarjeta */
+.services__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+  border: 3px solid var(--first-color);  /* Mantiene bordes redondeados */
 }
 
-.ri-radar-line{
-  color: var(--first-color); 
-  font-size: 4rem;
-  margin-top: 5px;
+/* Efecto de giro al pasar el cursor */
+.services__card:hover .services__card-inner {
+  transform: rotateY(180deg);
 }
+
+/* Parte frontal de la tarjeta */
+.services__card-front,
+.services__card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem; /* Asegura que el contenido esté centrado */
+}
+
+/* Fondo y diseño de la parte frontal */
+.services__card-front {
+  background-color: transparent; /* Fondo transparente */
+}
+
+.services__card-front .services__icon {
+  font-size: 4rem; /* Ajusta el tamaño del icono */
+  color: var(--first-color); /* Color del icono */
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center; /* Centra el icono */
+  align-items: center;
+}
+
+/* Fondo y estilo de la parte posterior (cuando la tarjeta se da vuelta) */
+.services__card-back {
+  transform: rotateY(180deg);
+  background-color: var(--alternate-body--color); /* Oro brillante */
+  color: black; /* Texto en negro */
+  font-size: var(--normal-font-size);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Título de la tarjeta */
 .services__title {
-  font-size: var(--h2-font-size);
-  margin-bottom: 1.5rem;
+  font-size: 1.50rem; /* Ajustado para mejor visibilidad */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color:  var(--first-color);
+  padding: 0 1rem;
+  word-wrap: break-word; /* Para que el texto no sobresalga */
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Centrado vertical en el medio del icono */
 }
+
+/* Asignar color de título según el servicio */
+
+
+/* Descripción de la tarjeta */
+.services__description {
+  font-size: var(--normal-font-size);
+  color: var(--first-color);
+  padding: 0 1rem;
+  word-wrap: break-word; /* Evita que el texto sobresalga */
+  max-width: 90%; /* Limita el texto dentro del cuadrado */
+  text-align: center;
+  overflow: hidden; /* Asegura que no sobresalga del contenedor */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es muy largo */
+}
+
+/* Ajustes para evitar que la descripción sobresalga en pantallas grandes */
+@media screen and (min-width: 1024px) {
+  .services__description {
+    font-size: 0.9rem; /* Ajuste de tamaño para pantallas grandes */
+    max-width: 100%; /* Ajusta el ancho máximo de la descripción */
+  }
+}
+
+
+
 
 /*=============== PROJECTS ===============*/
 .projects {
@@ -931,6 +1092,8 @@ padding-block: 3.5rem 2rem;
   .scrollup{
     right: 3rem;
   }
+
+  
 
  
 

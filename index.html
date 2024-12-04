@@ -23,6 +23,11 @@
     <title>Agustín Torres portfolio</title>
   </head>
   <body>
+
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+    
     <!--==================== HEADER ====================-->
   <header class="header" id="header">
     
@@ -195,14 +200,14 @@
           </div>
           <div class="skills__content">
             <ol class="skills__group">
-              <li class="skills__item">HTML & CSS</li>
+              <li class="skills__item">React</li>
               <li class="skills__item">JavaScript</li>
               <li class="skills__item">Python</li>
               
             </ol>
             <ol class="skills__group" start="5">
-              <li class="skills__item">Git & GitHub</li>
               <li class="skills__item">C# WPF .NET</li>
+              <li class="skills__item">Git & GitHub</li>
               <li class="skills__item">SQL Server & MySQL</li>
              
             </ol>
@@ -215,35 +220,69 @@
         <h3 class="section__subtitle">Mis <span>Servicios</span></h3>
         <h2 class="section__title">Lo que hago</h2>
         <div class="services__container container grid">
+          <!-- Tarjeta 1 -->
           <article class="services__card">
-            <i class="ri-layout-3-line services__icon"></i>
-            <h2 class="services__title">Desarrollador</h2>
-            <p class="services__description">
-              Desarrollo de páginas web y sistemas personalizados, utilizando tecnologías y librerías actuales del ámbito laboral para ofrecer soluciones funcionales y adaptadas a cada necesidad.
-            </p>
+            <div class="services__card-inner">
+              <div class="services__card-front">
+                <img src="./assets/img/codigo.png" alt="Desarrollador" class="services__icon">
+                <h2 class="services__title">Desarrollador</h2>
+              </div>
+              <div class="services__card-back">
+                <p class="services__description">
+                 Creo soluciones digitales utilizando tecnologías modernas como React&NodeJs. Tengo experiencia en el diseño y desarrollo de aplicaciones web y de escritorio, trabajando con lenguajes como Python, C#WPF.NET.
+                  
+                </p>
+              </div>
+            </div>
           </article>
+      
+          <!-- Tarjeta 2 -->
           <article class="services__card">
-            <i class="ri-database-2-line services__icon"></i>
-            <h2 class="services__title">Base De Datos</h2>
-            <p class="services__description">
-              Creación y gestión de bases de datos personalizadas, implementando soluciones eficientes para almacenar, organizar y acceder a la información de manera segura y escalable, adaptadas a las necesidades específicas de cada proyecto.
+            <div class="services__card-inner">
+              <div class="services__card-front">
+                <img src="./assets/img/base-de-datos.png" alt="Base De Datos" class="services__icon">
+                <h2 class="services__title">Base De Datos</h2>
+              </div>
+              <div class="services__card-back">
+                <p class="services__description">
+                  Creación y gestión de bases de datos personalizadas. Base De Datos Relacionales. Procedimientos Almacenados.. Disparadores, Funciones y vistas. 
+                </p>
+              </div>
+            </div>
           </article>
+      
+          <!-- Tarjeta 3 -->
           <article class="services__card">
-            <i class="ri-computer-line"></i>
-            <h2 class="services__title">Servicio Técnico de Equipos Informáticos</h2>
-            <p class="services__description">
-              Reparo y mantengo equipos informáticos, incluyendo la sustitución de memoria RAM, discos duros y tarjetas gráficas. Realizo limpieza de coolers, diagnóstico de fallos y optimización del sistema para garantizar un rendimiento óptimo.
-            </p>
+            <div class="services__card-inner">
+              <div class="services__card-front">
+                <img src="./assets/img/ordenador-personal.png" alt="Servicio Técnico de Equipos Informáticos" class="services__icon">
+                <h2 class="services__title">Servicio Técnico de Equipos Informáticos</h2>
+              </div>
+              <div class="services__card-back">
+                <p class="services__description">
+                  Reparo y mantengo equipos informáticos, incluyendo la sustitución de memoria RAM, discos duros y tarjetas gráficas. Realizo limpieza de coolers, etc.
+                </p>
+              </div>
+            </div>
           </article>
+      
+          <!-- Tarjeta 4 -->
           <article class="services__card">
-            <i class="ri-radar-line"></i>
-            <h2 class="services__title">infraestructura de Redes</h2>
-            <p class="services__description">
-             Mantenimiento y configuración de redes, incluyendo la configuración de DHCP, enrutamiento entre redes, gestión de gateways, conocimiento de cableado, coaxiales, UTP y fibra óptica, etc. Utilizo switches y routers para asegurar una red estable, eficiente y segura.
-            </p>
+            <div class="services__card-inner">
+              <div class="services__card-front">
+                <img src="./assets/img/red-de-computadoras.png" alt="Infraestructura de Redes" class="services__icon">
+                <h2 class="services__title">Infraestructura de Redes</h2>
+              </div>
+              <div class="services__card-back">
+                <p class="services__description">
+                  Mantenimiento y configuración de redes, incluyendo la configuración de DHCP, enrutamiento entre redes, gestión de gateways, conocimiento de cableado, coaxiales, UTP y fibra óptica, etc.
+                </p>
+              </div>
+            </div>
           </article>
         </div>
       </section>
+      
 
       <!--==================== PROJECTS ====================-->
       <section class="projects section" id="projects">
@@ -471,6 +510,12 @@
       </div>
     </footer>
 
+
+
+
+        <!--=============== PARTICLES JS ===============-->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <!--========== SCROLL UP ==========-->
     <a href="" class="scrollup" id="scroll-up">
       <i class="ri-arrow-up-line"></i>
@@ -487,6 +532,14 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="./assets/js/main.js"></script>
+
+
+
+
+ 
+
+  
+
   
 
   </body>

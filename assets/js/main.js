@@ -115,7 +115,7 @@ function restorePlaceholder(element, text) {
 const sr = ScrollReveal({
   origin: 'top',       // El origen del movimiento (puedes cambiar 'top' por 'left', 'right', 'bottom' según quieras que se desplace)
   distance: '60px',     // La distancia del movimiento
-  duration: 2900,       // Duración de la animación en milisegundos
+  duration: 1000,       // Duración de la animación en milisegundos
   delay: 250,          // Retraso antes de que empiece la animación
   reset: true,         // Si quieres que la animación se repita cuando el elemento vuelva a la vista
 });
@@ -127,13 +127,61 @@ sr.reveal(`.about__data, .skills__data`, {origin:'left'})
 sr.reveal(`.about__image, .skills__content`, {origin:'right'})
 sr.reveal(`.services__card, .projects__card`, {interval:100})
        // No repetir la animación al hacer scroll hacia atrás
+       // Aplica la animación a cada sección usando su clase o ID
+
+
+
+
+/*=============== GIRO DE TARJETAS===============*/
+// Seleccionar todas las tarjetas
+const serviceCards = document.querySelectorAll('.services__card');
+
+// Evento para móvil (touchstart)
+serviceCards.forEach((card) => {
+  card.addEventListener('touchstart', () => {
+    // Alternar la clase "is-flipped" cuando se toque la tarjeta en dispositivos móviles
+    const innerCard = card.querySelector('.services__card-inner');
+    innerCard.classList.add('is-flipped');
+  });
+
+  // Revertir el giro después de un toque
+  card.addEventListener('touchend', () => {
+    setTimeout(() => {
+      const innerCard = card.querySelector('.services__card-inner');
+      innerCard.classList.remove('is-flipped');
+    }, 500); // Esperar medio segundo antes de revertir el giro
+  });
+});
+
+// Evento para escritorio (hover)
+serviceCards.forEach((card) => {
+  card.addEventListener('mouseenter', () => {
+    // Alternar la clase "is-flipped" cuando el cursor pasa sobre la tarjeta
+    const innerCard = card.querySelector('.services__card-inner');
+    innerCard.classList.add('is-flipped');
+  });
+
+  // Revertir el giro cuando el cursor ya no esté sobre la tarjeta
+  card.addEventListener('mouseleave', () => {
+    const innerCard = card.querySelector('.services__card-inner');
+    innerCard.classList.remove('is-flipped');
+  });
+});
+
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("hidden");
+  setTimeout(() => {
+    preloader.style.display = "none"; /* Oculta completamente después de la transición */
+  }, 500); // Tiempo igual al de la transición en CSS
+});
 
 
 
 
 
 
-// Aplica la animación a cada sección usando su clase o ID
 
 
 
